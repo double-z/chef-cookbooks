@@ -1,6 +1,6 @@
 #
-# Cookbook Name:: apache2
-# Recipe:: authnz_ldap 
+# Cookbook Name:: build-essential
+# Recipe:: default
 #
 # Copyright 2008-2009, Opscode, Inc.
 #
@@ -17,4 +17,29 @@
 # limitations under the License.
 #
 
-apache_module "authnz_ldap"
+case node['platform']
+when "ubuntu","debian"
+  %w{build-essential binutils-doc}.each do |pkg|
+    package pkg do
+      action :install
+    end
+  end
+when "centos","redhat","fedora"
+  %w{gcc gcc-c++ kernel-devel make}.each do |pkg|
+    package pkg do
+      action :install
+    end
+  end
+end
+
+package "autoconf" do
+  action :install
+end
+
+package "flex" do
+  action :install
+end
+
+package "bison" do
+  action :install
+end

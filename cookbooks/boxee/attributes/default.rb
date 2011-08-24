@@ -17,7 +17,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-case kernel[machine]
+case node[:kernel][:machine]
 when "x86_64"
   node[:boxee_dpkg_url] = "http://www.boxee.tv/download/ubuntu64?early=0"
     node[:boxee_dpkg_checksum] = "06f3482df763d0c56c4e9a6cc26724e657efd1e078661c75b08bd3f7dade3992"
@@ -25,5 +25,5 @@ when "x86"
   node[:boxee_dpkg_url] = "http://www.boxee.tv/download/ubuntu?early=0"
   node[:boxee_dpkg_checksum] = "5370c6a11eea1955174f5ce6622ccdff440764574c1871f11c5ea96ea29e6cb3"
 else
-  raise "Machine architecture #{node[:kernel][:machine]} not supported!"
+  # raise "Machine architecture #{node[:kernel][:machine]} not supported!"
 end
