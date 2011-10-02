@@ -17,11 +17,10 @@
 # limitations under the License.
 #
 
-include_recipe "apache2"
+include_recipe "nginx"
 include_recipe "mysql::server"
 include_recipe "php"
 include_recipe "php::module_mysql"
-include_recipe "apache2::mod_php5"
 
 if node.has_key?("ec2")
   server_fqdn = node['ec2']['public_hostname']
@@ -112,6 +111,7 @@ template "#{node['wordpress']['dir']}/wp-config.php" do
   notifies :write, "log[Navigate to 'http://#{server_fqdn}/wp-admin/install.php' to complete wordpress installation]"
 end
 
+=begin
 apache_site "000-default" do
   enable false
 end
@@ -122,4 +122,4 @@ web_app "wordpress" do
   server_name server_fqdn
   server_aliases node['fqdn']
 end
-
+=end
