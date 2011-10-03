@@ -8,6 +8,5 @@ Vagrant::Config.run do |config|
 
     # TODO Refactor
     chef.add_role "rnet-admin"
-    chef.add_role "rnet-wordpress"
   end
 end
