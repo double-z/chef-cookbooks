@@ -1,0 +1,179 @@
+{
+  "name": "wordpress",
+  "description": "Installs/Configures wordpress for nginx",
+  "long_description": "come at me bro",
+  "maintainer": "Kelly Dunn",
+  "maintainer_email": "defaultstring@gmail.com",
+  "license": "nginx I guess",
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "fedora": ">= 0.0.0"
+  },
+  "dependencies": {
+    "php": ">= 0.0.0",
+    "openssl": ">= 0.0.0",
+    "nginx" : ">=0.0.0",
+    "mysql": ">= 1.0.5"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+    "wordpress/version": {
+      "display_name": "Wordpress download version",
+      "description": "Version of Wordpress to download from the Wordpress site.",
+      "default": "3.0.4",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "wordpress/checksum": {
+      "display_name": "Wordpress tarball checksum",
+      "description": "Checksum of the tarball for the version specified.",
+      "default": "7342627f4a3dca44886c5aca6834cc88671dbd3aa2760182d2fcb9a330807",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "wordpress/dir": {
+      "display_name": "Wordpress installation directory",
+      "description": "Location to place wordpress files.",
+      "default": "/var/www",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "wordpress/db/database": {
+      "display_name": "Wordpress MySQL database",
+      "description": "Wordpress will use this MySQL database to store its data.",
+      "default": "wordpressdb",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "wordpress/db/user": {
+      "display_name": "Wordpress MySQL user",
+      "description": "Wordpress will connect to MySQL using this user.",
+      "default": "wordpressuser",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "wordpress/db/password": {
+      "display_name": "Wordpress MySQL password",
+      "description": "Password for the Wordpress MySQL user.",
+      "default": "randomly generated",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "wordpress/keys/auth": {
+      "display_name": "Wordpress auth key",
+      "description": "Wordpress auth key.",
+      "default": "randomly generated",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "wordpress/keys/secure_auth": {
+      "display_name": "Wordpress secure auth key",
+      "description": "Wordpress secure auth key.",
+      "default": "randomly generated",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "wordpress/keys/logged_in": {
+      "display_name": "Wordpress logged-in key",
+      "description": "Wordpress logged-in key.",
+      "default": "randomly generated",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    },
+    "wordpress/keys/nonce": {
+      "display_name": "Wordpress nonce key",
+      "description": "Wordpress nonce key.",
+      "default": "randomly generated",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string",
+      "required": "optional",
+      "recipes": [
+
+      ]
+    }
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "wordpress": "Installs and configures wordpress LAMP stack on a single system"
+  },
+  "version": "0.8.2"
+}
