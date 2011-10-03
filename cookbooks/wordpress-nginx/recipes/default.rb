@@ -19,7 +19,6 @@
 
 include_recipe "nginx"
 include_recipe "mysql::server"
-=begin
 include_recipe "php"
 include_recipe "php::module_mysql"
 
@@ -30,6 +29,7 @@ else
   server_fqdn = node['fqdn']
 end
 
+=begin
 node.set['wordpress']['db']['password'] = secure_password
 node.set['wordpress']['keys']['auth'] = secure_password
 node.set['wordpress']['keys']['secure_auth'] = secure_password
