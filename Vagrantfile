@@ -6,6 +6,11 @@ Vagrant::Config.run do |config|
     chef.roles_path = "roles"
     chef.data_bags_path = "data_bags"
 
-    chef.run_list = ["role[rnet-admin]", "role[rnet-user]"]
+    chef.run_list = [
+      "role[rnet-admin]", 
+      "role[rnet-user]",
+      "role[rnet-wordpress]"
+    ]
+
   end
 end
