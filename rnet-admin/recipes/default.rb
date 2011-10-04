@@ -17,6 +17,6 @@ admins.each do |name|
 end
 
 group "admins" do
-  gid 999
+  gid "999"
   members admins
 end
